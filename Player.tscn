@@ -1,24 +1,57 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
-[ext_resource path="res://assets/bomb/bomb1_stand_0_0.png" type="Texture" id=2]
+[ext_resource path="res://assets/head/head1_stand_3_0.png" type="Texture" id=2]
+[ext_resource path="res://assets/foot/foot1_stand_3_0.png" type="Texture" id=3]
+[ext_resource path="res://assets/body/body1_stand_1_0.png" type="Texture" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 17.0294
 
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
 [node name="Player" type="KinematicBody2D"]
-position = Vector2( 117, 108 )
+position = Vector2( 113, 97 )
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
 speed = 200
 
-[node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 2 )
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2( 0, -2 )
 shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -1, 14 )
+frames = SubResource( 2 )
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
+position = Vector2( -1, -8 )
+frames = SubResource( 3 )
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="."]
+position = Vector2( -1, 23 )
+frames = SubResource( 4 )
 
 [connection signal="input_event" from="." to="." method="_on_Player_input_event"]
