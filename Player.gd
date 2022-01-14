@@ -24,14 +24,10 @@ func _physics_process(delta):
 	if Input.is_action_pressed("move_down"):
 		move_and_collide(Vector2.DOWN*speed*delta)
 	if Input.is_action_just_pressed("lay_bomb"):
-		print("lay")
 		var bomb_inst = bomb_scene.instance()
-		bomb_inst.position.x = position.x -10
+		bomb_inst.position.x = position.x
 		bomb_inst.position.y = position.y
 		get_parent().add_child(bomb_inst)
 
 
 
-func _on_Player_input_event(viewport, event, shape_idx):
-	print("1")
-	print(viewport, event, shape_idx)

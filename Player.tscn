@@ -1,12 +1,14 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/head/head1_stand_3_0.png" type="Texture" id=2]
 [ext_resource path="res://assets/foot/foot1_stand_3_0.png" type="Texture" id=3]
 [ext_resource path="res://assets/body/body1_stand_1_0.png" type="Texture" id=4]
+[ext_resource path="res://Bomb2.tscn" type="PackedScene" id=5]
 
-[sub_resource type="CircleShape2D" id=1]
-radius = 17.0294
+[sub_resource type="CapsuleShape2D" id=5]
+radius = 11.0
+height = 0.0
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -33,25 +35,35 @@ animations = [ {
 } ]
 
 [node name="Player" type="KinematicBody2D"]
-position = Vector2( 113, 97 )
+position = Vector2( 96, 148 )
+z_index = 2
 script = ExtResource( 1 )
 speed = 200
+bomb_scene = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2( 0, -2 )
-shape = SubResource( 1 )
+position = Vector2( 0, -8 )
+shape = SubResource( 5 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( -1, 14 )
+position = Vector2( 0, -10 )
 frames = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
-position = Vector2( -1, -8 )
+position = Vector2( -1, -32 )
 frames = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="."]
-position = Vector2( -1, 23 )
+position = Vector2( 0, -1 )
 frames = SubResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [connection signal="input_event" from="." to="." method="_on_Player_input_event"]
