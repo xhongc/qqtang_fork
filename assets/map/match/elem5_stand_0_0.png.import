@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/foot1_stand_3_0.png-47e079a723a622c81829f550c3dec5c4.stex"
+path="res://.import/elem5_stand_0_0.png-ecf44fdc9dbb6680e8877b2076384dc2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/foot/foot1_stand_3_0.png"
-dest_files=[ "res://.import/foot1_stand_3_0.png-47e079a723a622c81829f550c3dec5c4.stex" ]
+source_file="res://assets/map/match/elem5_stand_0_0.png"
+dest_files=[ "res://.import/elem5_stand_0_0.png-ecf44fdc9dbb6680e8877b2076384dc2.stex" ]
 
 [params]
 

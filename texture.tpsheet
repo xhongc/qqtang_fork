@@ -1,0 +1,333 @@
+{
+	"textures": [
+		{
+			"image": "texture.png",
+			"size": {
+				"w": 425,
+				"h": 425
+			},
+			"sprites": [
+				{
+					"filename": "up2.png",
+					"region": {
+						"x": 0,
+						"y": 0,
+						"w": 85,
+						"h": 85
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "char_37.gif",
+					"region": {
+						"x": 85,
+						"y": 0,
+						"w": 85,
+						"h": 85
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "char_50.gif",
+					"region": {
+						"x": 0,
+						"y": 85,
+						"w": 85,
+						"h": 85
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "down1.png",
+					"region": {
+						"x": 85,
+						"y": 85,
+						"w": 85,
+						"h": 85
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "down2.png",
+					"region": {
+						"x": 170,
+						"y": 0,
+						"w": 85,
+						"h": 85
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "down3.png",
+					"region": {
+						"x": 170,
+						"y": 85,
+						"w": 85,
+						"h": 85
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "down4.png",
+					"region": {
+						"x": 0,
+						"y": 170,
+						"w": 85,
+						"h": 85
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "down5.png",
+					"region": {
+						"x": 85,
+						"y": 170,
+						"w": 85,
+						"h": 85
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "down6.png",
+					"region": {
+						"x": 170,
+						"y": 170,
+						"w": 85,
+						"h": 85
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "up.png",
+					"region": {
+						"x": 255,
+						"y": 0,
+						"w": 85,
+						"h": 85
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "char_38.gif",
+					"region": {
+						"x": 255,
+						"y": 85,
+						"w": 85,
+						"h": 85
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "up3.png",
+					"region": {
+						"x": 255,
+						"y": 170,
+						"w": 85,
+						"h": 85
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "up4.png",
+					"region": {
+						"x": 0,
+						"y": 255,
+						"w": 85,
+						"h": 85
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "up5.png",
+					"region": {
+						"x": 85,
+						"y": 255,
+						"w": 85,
+						"h": 85
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "up6.png",
+					"region": {
+						"x": 170,
+						"y": 255,
+						"w": 85,
+						"h": 85
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "walk1.png",
+					"region": {
+						"x": 255,
+						"y": 255,
+						"w": 85,
+						"h": 85
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "walk2.png",
+					"region": {
+						"x": 340,
+						"y": 0,
+						"w": 85,
+						"h": 85
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "walk3.png",
+					"region": {
+						"x": 340,
+						"y": 85,
+						"w": 85,
+						"h": 85
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "walk4.png",
+					"region": {
+						"x": 340,
+						"y": 170,
+						"w": 85,
+						"h": 85
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "walk5.png",
+					"region": {
+						"x": 340,
+						"y": 255,
+						"w": 85,
+						"h": 85
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "walk6.png",
+					"region": {
+						"x": 0,
+						"y": 340,
+						"w": 85,
+						"h": 85
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "http://free-tex-packer.com",
+		"version": "0.6.7",
+		"format": "RGBA8888",
+	}
+}

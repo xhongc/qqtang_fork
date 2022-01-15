@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Bomb2.gd" type="Script" id=1]
 [ext_resource path="res://assets/bomb/bomb1_stand_0_3.png" type="Texture" id=2]
 [ext_resource path="res://assets/bomb/bomb1_stand_0_2.png" type="Texture" id=3]
 [ext_resource path="res://assets/bomb/bomb1_stand_0_0.png" type="Texture" id=4]
 [ext_resource path="res://assets/bomb/bomb1_stand_0_1.png" type="Texture" id=5]
+[ext_resource path="res://Explosion.tscn" type="PackedScene" id=6]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -23,6 +24,7 @@ radius = 17.0
 [node name="Bomb2" type="Area2D"]
 collision_layer = 0
 script = ExtResource( 1 )
+explosion_scene = ExtResource( 6 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
@@ -44,6 +46,7 @@ __meta__ = {
 }
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
 one_shot = true
 autostart = true
 

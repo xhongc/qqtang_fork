@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/flame2_stand_0_6.png-02062cb0a0416acfd51d75149fe67e53.res"
+group_file="res://assets/explosion/sprite_sheet.png"
+valid=true
+[deps]
+
+
+source_file="res://assets/explosion/flame2_stand_0_6.png"
+dest_files=[ "res://.import/flame2_stand_0_6.png-02062cb0a0416acfd51d75149fe67e53.res" ]
+
+[params]
+
+atlas_file="res://assets/explosion/sprite_sheet.png"
+import_mode=0
+crop_to_region=false

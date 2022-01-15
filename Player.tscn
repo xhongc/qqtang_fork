@@ -1,38 +1,1087 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
-[ext_resource path="res://assets/head/head1_stand_3_0.png" type="Texture" id=2]
-[ext_resource path="res://assets/foot/foot1_stand_3_0.png" type="Texture" id=3]
-[ext_resource path="res://assets/body/body1_stand_1_0.png" type="Texture" id=4]
+[ext_resource path="res://Hair.gd" type="Script" id=2]
+[ext_resource path="res://assets/character/leg/leg.png" type="Texture" id=3]
+[ext_resource path="res://assets/character/body/body.png" type="Texture" id=4]
 [ext_resource path="res://Bomb2.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/character/foot/foot.png" type="Texture" id=6]
+[ext_resource path="res://assets/character/hair/hair.png" type="Texture" id=7]
+[ext_resource path="res://assets/character/face/face.png" type="Texture" id=8]
+[ext_resource path="res://assets/character/cloth/cloth.png" type="Texture" id=9]
+[ext_resource path="res://Face.gd" type="Script" id=10]
+[ext_resource path="res://Body.gd" type="Script" id=11]
+[ext_resource path="res://Cloth.gd" type="Script" id=12]
+[ext_resource path="res://Leg.gd" type="Script" id=13]
+[ext_resource path="res://Foot.gd" type="Script" id=14]
 
 [sub_resource type="CapsuleShape2D" id=5]
 radius = 11.0
 height = 0.0
 
-[sub_resource type="SpriteFrames" id=2]
-animations = [ {
-"frames": [ ExtResource( 4 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
+[sub_resource type="Animation" id=21]
+resource_name = "idle_down"
+length = 0.1
+tracks/0/type = "method"
+tracks/0/path = NodePath("Face")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "idle", "down" ],
+"method": "change_face"
 } ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("Hair")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "idle", "down" ],
+"method": "change_hair"
+} ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("Body")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "idle", "down" ],
+"method": "change_body"
+} ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("Cloth")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "idle", "down" ],
+"method": "change_cloth"
+} ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath("Leg")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "idle", "down" ],
+"method": "change_leg"
+} ]
+}
+tracks/5/type = "method"
+tracks/5/path = NodePath("Foot")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "idle", "down" ],
+"method": "change_foot"
+} ]
+}
 
-[sub_resource type="SpriteFrames" id=3]
-animations = [ {
-"frames": [ ExtResource( 2 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
+[sub_resource type="Animation" id=18]
+resource_name = "idle_left"
+length = 0.1
+tracks/0/type = "method"
+tracks/0/path = NodePath("Face")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "idle", "left" ],
+"method": "change_face"
 } ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("Hair")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "idle", "left" ],
+"method": "change_hair"
+} ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("Body")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "idle", "left" ],
+"method": "change_body"
+} ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("Cloth")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "idle", "left" ],
+"method": "change_cloth"
+} ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath("Leg")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "idle", "left" ],
+"method": "change_leg"
+} ]
+}
+tracks/5/type = "method"
+tracks/5/path = NodePath("Foot")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "idle", "left" ],
+"method": "change_foot"
+} ]
+}
 
-[sub_resource type="SpriteFrames" id=4]
-animations = [ {
-"frames": [ ExtResource( 3 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
+[sub_resource type="Animation" id=19]
+resource_name = "idle_right"
+length = 0.1
+tracks/0/type = "method"
+tracks/0/path = NodePath("Face")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "idle", "right" ],
+"method": "change_face"
 } ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("Hair")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "idle", "right" ],
+"method": "change_hair"
+} ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("Body")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "idle", "right" ],
+"method": "change_body"
+} ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("Cloth")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "idle", "right" ],
+"method": "change_cloth"
+} ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath("Leg")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "idle", "right" ],
+"method": "change_leg"
+} ]
+}
+tracks/5/type = "method"
+tracks/5/path = NodePath("Foot")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "idle", "right" ],
+"method": "change_foot"
+} ]
+}
+
+[sub_resource type="Animation" id=20]
+resource_name = "idle_up"
+length = 0.1
+tracks/0/type = "method"
+tracks/0/path = NodePath("Face")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "idle", "up" ],
+"method": "change_face"
+} ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("Hair")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "idle", "up" ],
+"method": "change_hair"
+} ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("Body")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "idle", "up" ],
+"method": "change_body"
+} ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("Cloth")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "idle", "up" ],
+"method": "change_cloth"
+} ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath("Leg")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "idle", "up" ],
+"method": "change_leg"
+} ]
+}
+tracks/5/type = "method"
+tracks/5/path = NodePath("Foot")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "idle", "up" ],
+"method": "change_foot"
+} ]
+}
+
+[sub_resource type="Animation" id=16]
+resource_name = "walk_down"
+length = 0.5
+tracks/0/type = "method"
+tracks/0/path = NodePath("Face")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [ "down", "0" ],
+"method": "change_face"
+}, {
+"args": [ "down", "1" ],
+"method": "change_face"
+}, {
+"args": [ "down", "2" ],
+"method": "change_face"
+}, {
+"args": [ "down", "3" ],
+"method": "change_face"
+}, {
+"args": [ "down", "4" ],
+"method": "change_face"
+}, {
+"args": [ "down", "5" ],
+"method": "change_face"
+} ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("Hair")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [ "down", "0" ],
+"method": "change_hair"
+}, {
+"args": [ "down", "1" ],
+"method": "change_hair"
+}, {
+"args": [ "down", "2" ],
+"method": "change_hair"
+}, {
+"args": [ "down", "3" ],
+"method": "change_hair"
+}, {
+"args": [ "down", "4" ],
+"method": "change_hair"
+}, {
+"args": [ "down", "5" ],
+"method": "change_hair"
+} ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("Body")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [ "down", "0" ],
+"method": "change_body"
+}, {
+"args": [ "down", "1" ],
+"method": "change_body"
+}, {
+"args": [ "down", "2" ],
+"method": "change_body"
+}, {
+"args": [ "down", "3" ],
+"method": "change_body"
+}, {
+"args": [ "down", "4" ],
+"method": "change_body"
+}, {
+"args": [ "down", "5" ],
+"method": "change_body"
+} ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("Cloth")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [ "down", "0" ],
+"method": "change_cloth"
+}, {
+"args": [ "down", "1" ],
+"method": "change_cloth"
+}, {
+"args": [ "down", "3" ],
+"method": "change_cloth"
+}, {
+"args": [ "down", "3" ],
+"method": "change_cloth"
+}, {
+"args": [ "down", "4" ],
+"method": "change_cloth"
+}, {
+"args": [ "down", "5" ],
+"method": "change_cloth"
+} ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath("Leg")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [ "down", "0" ],
+"method": "change_leg"
+}, {
+"args": [ "down", "1" ],
+"method": "change_leg"
+}, {
+"args": [ "down", "2" ],
+"method": "change_leg"
+}, {
+"args": [ "down", "3" ],
+"method": "change_leg"
+}, {
+"args": [ "down", "4" ],
+"method": "change_leg"
+}, {
+"args": [ "down", "5" ],
+"method": "change_leg"
+} ]
+}
+tracks/5/type = "method"
+tracks/5/path = NodePath("Foot")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [ "down", "0" ],
+"method": "change_foot"
+}, {
+"args": [ "down", "1" ],
+"method": "change_foot"
+}, {
+"args": [ "down", "2" ],
+"method": "change_foot"
+}, {
+"args": [ "down", "3" ],
+"method": "change_foot"
+}, {
+"args": [ "down", "4" ],
+"method": "change_foot"
+}, {
+"args": [ "down", "5" ],
+"method": "change_foot"
+} ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "walk_right2"
+length = 0.5
+tracks/0/type = "method"
+tracks/0/path = NodePath("Face")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [ "left", "0" ],
+"method": "change_face"
+}, {
+"args": [ "left", "1" ],
+"method": "change_face"
+}, {
+"args": [ "left", "2" ],
+"method": "change_face"
+}, {
+"args": [ "left", "3" ],
+"method": "change_face"
+}, {
+"args": [ "left", "4" ],
+"method": "change_face"
+}, {
+"args": [ "left", "5" ],
+"method": "change_face"
+} ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("Hair")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [ "left", "0" ],
+"method": "change_hair"
+}, {
+"args": [ "left", "1" ],
+"method": "change_hair"
+}, {
+"args": [ "left", "2" ],
+"method": "change_hair"
+}, {
+"args": [ "left", "3" ],
+"method": "change_hair"
+}, {
+"args": [ "left", "4" ],
+"method": "change_hair"
+}, {
+"args": [ "left", "5" ],
+"method": "change_hair"
+} ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("Body")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [ "left", "0" ],
+"method": "change_body"
+}, {
+"args": [ "left", "1" ],
+"method": "change_body"
+}, {
+"args": [ "left", "2" ],
+"method": "change_body"
+}, {
+"args": [ "left", "3" ],
+"method": "change_body"
+}, {
+"args": [ "left", "4" ],
+"method": "change_body"
+}, {
+"args": [ "left", "5" ],
+"method": "change_body"
+} ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("Cloth")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [ "left", "0" ],
+"method": "change_cloth"
+}, {
+"args": [ "left", "1" ],
+"method": "change_cloth"
+}, {
+"args": [ "left", "3" ],
+"method": "change_cloth"
+}, {
+"args": [ "left", "3" ],
+"method": "change_cloth"
+}, {
+"args": [ "left", "4" ],
+"method": "change_cloth"
+}, {
+"args": [ "left", "5" ],
+"method": "change_cloth"
+} ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath("Leg")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [ "left", "0" ],
+"method": "change_leg"
+}, {
+"args": [ "left", "1" ],
+"method": "change_leg"
+}, {
+"args": [ "left", "2" ],
+"method": "change_leg"
+}, {
+"args": [ "left", "3" ],
+"method": "change_leg"
+}, {
+"args": [ "left", "4" ],
+"method": "change_leg"
+}, {
+"args": [ "left", "5" ],
+"method": "change_leg"
+} ]
+}
+tracks/5/type = "method"
+tracks/5/path = NodePath("Foot")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [ "left", "0" ],
+"method": "change_foot"
+}, {
+"args": [ "left", "1" ],
+"method": "change_foot"
+}, {
+"args": [ "left", "2" ],
+"method": "change_foot"
+}, {
+"args": [ "left", "3" ],
+"method": "change_foot"
+}, {
+"args": [ "left", "4" ],
+"method": "change_foot"
+}, {
+"args": [ "left", "5" ],
+"method": "change_foot"
+} ]
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "walk_right"
+length = 0.5
+tracks/0/type = "method"
+tracks/0/path = NodePath("Face")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [ "right", "0" ],
+"method": "change_face"
+}, {
+"args": [ "right", "1" ],
+"method": "change_face"
+}, {
+"args": [ "right", "2" ],
+"method": "change_face"
+}, {
+"args": [ "right", "3" ],
+"method": "change_face"
+}, {
+"args": [ "right", "4" ],
+"method": "change_face"
+}, {
+"args": [ "right", "5" ],
+"method": "change_face"
+} ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("Hair")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [ "right", "0" ],
+"method": "change_hair"
+}, {
+"args": [ "right", "1" ],
+"method": "change_hair"
+}, {
+"args": [ "right", "2" ],
+"method": "change_hair"
+}, {
+"args": [ "right", "3" ],
+"method": "change_hair"
+}, {
+"args": [ "right", "4" ],
+"method": "change_hair"
+}, {
+"args": [ "right", "5" ],
+"method": "change_hair"
+} ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("Body")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [ "right", "0" ],
+"method": "change_body"
+}, {
+"args": [ "right", "1" ],
+"method": "change_body"
+}, {
+"args": [ "right", "2" ],
+"method": "change_body"
+}, {
+"args": [ "right", "3" ],
+"method": "change_body"
+}, {
+"args": [ "right", "4" ],
+"method": "change_body"
+}, {
+"args": [ "right", "5" ],
+"method": "change_body"
+} ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("Cloth")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [ "right", "0" ],
+"method": "change_cloth"
+}, {
+"args": [ "right", "1" ],
+"method": "change_cloth"
+}, {
+"args": [ "right", "3" ],
+"method": "change_cloth"
+}, {
+"args": [ "right", "3" ],
+"method": "change_cloth"
+}, {
+"args": [ "right", "4" ],
+"method": "change_cloth"
+}, {
+"args": [ "right", "5" ],
+"method": "change_cloth"
+} ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath("Leg")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [ "right", "0" ],
+"method": "change_leg"
+}, {
+"args": [ "right", "1" ],
+"method": "change_leg"
+}, {
+"args": [ "right", "2" ],
+"method": "change_leg"
+}, {
+"args": [ "right", "3" ],
+"method": "change_leg"
+}, {
+"args": [ "right", "4" ],
+"method": "change_leg"
+}, {
+"args": [ "right", "5" ],
+"method": "change_leg"
+} ]
+}
+tracks/5/type = "method"
+tracks/5/path = NodePath("Foot")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [ "right", "0" ],
+"method": "change_foot"
+}, {
+"args": [ "right", "1" ],
+"method": "change_foot"
+}, {
+"args": [ "right", "2" ],
+"method": "change_foot"
+}, {
+"args": [ "right", "3" ],
+"method": "change_foot"
+}, {
+"args": [ "right", "4" ],
+"method": "change_foot"
+}, {
+"args": [ "right", "5" ],
+"method": "change_foot"
+} ]
+}
+
+[sub_resource type="Animation" id=15]
+resource_name = "walk_up"
+length = 0.5
+tracks/0/type = "method"
+tracks/0/path = NodePath("Face")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [ "up", "0" ],
+"method": "change_face"
+}, {
+"args": [ "up", "1" ],
+"method": "change_face"
+}, {
+"args": [ "up", "2" ],
+"method": "change_face"
+}, {
+"args": [ "up", "3" ],
+"method": "change_face"
+}, {
+"args": [ "up", "4" ],
+"method": "change_face"
+}, {
+"args": [ "up", "5" ],
+"method": "change_face"
+} ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("Hair")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [ "up", "0" ],
+"method": "change_hair"
+}, {
+"args": [ "up", "1" ],
+"method": "change_hair"
+}, {
+"args": [ "up", "2" ],
+"method": "change_hair"
+}, {
+"args": [ "up", "3" ],
+"method": "change_hair"
+}, {
+"args": [ "up", "4" ],
+"method": "change_hair"
+}, {
+"args": [ "up", "5" ],
+"method": "change_hair"
+} ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("Body")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [ "up", "0" ],
+"method": "change_body"
+}, {
+"args": [ "up", "1" ],
+"method": "change_body"
+}, {
+"args": [ "up", "2" ],
+"method": "change_body"
+}, {
+"args": [ "up", "3" ],
+"method": "change_body"
+}, {
+"args": [ "up", "4" ],
+"method": "change_body"
+}, {
+"args": [ "up", "5" ],
+"method": "change_body"
+} ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("Cloth")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [ "up", "0" ],
+"method": "change_cloth"
+}, {
+"args": [ "up", "1" ],
+"method": "change_cloth"
+}, {
+"args": [ "up", "3" ],
+"method": "change_cloth"
+}, {
+"args": [ "up", "3" ],
+"method": "change_cloth"
+}, {
+"args": [ "up", "4" ],
+"method": "change_cloth"
+}, {
+"args": [ "up", "5" ],
+"method": "change_cloth"
+} ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath("Leg")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [ "up", "0" ],
+"method": "change_leg"
+}, {
+"args": [ "up", "1" ],
+"method": "change_leg"
+}, {
+"args": [ "up", "2" ],
+"method": "change_leg"
+}, {
+"args": [ "up", "3" ],
+"method": "change_leg"
+}, {
+"args": [ "up", "4" ],
+"method": "change_leg"
+}, {
+"args": [ "up", "5" ],
+"method": "change_leg"
+} ]
+}
+tracks/5/type = "method"
+tracks/5/path = NodePath("Foot")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [ "up", "0" ],
+"method": "change_foot"
+}, {
+"args": [ "up", "1" ],
+"method": "change_foot"
+}, {
+"args": [ "up", "2" ],
+"method": "change_foot"
+}, {
+"args": [ "up", "3" ],
+"method": "change_foot"
+}, {
+"args": [ "up", "4" ],
+"method": "change_foot"
+}, {
+"args": [ "up", "5" ],
+"method": "change_foot"
+} ]
+}
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 96, 148 )
@@ -41,29 +1090,68 @@ script = ExtResource( 1 )
 speed = 200
 bomb_scene = ExtResource( 5 )
 
+[node name="Head" type="Sprite" parent="."]
+visible = false
+position = Vector2( 0, -28 )
+region_enabled = true
+region_rect = Rect2( 48, 4, 36, 34 )
+
+[node name="Face" type="Sprite" parent="."]
+position = Vector2( 0, -28 )
+texture = ExtResource( 8 )
+region_enabled = true
+region_rect = Rect2( 45, 3, 36, 34 )
+script = ExtResource( 10 )
+action_x = "1"
+
+[node name="Hair" type="Sprite" parent="."]
+position = Vector2( 0, -32 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 3, 3, 44, 41 )
+script = ExtResource( 2 )
+
+[node name="Body" type="Sprite" parent="."]
+position = Vector2( 0, -6 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 3, 3, 26, 14 )
+script = ExtResource( 11 )
+
+[node name="Foot" type="Sprite" parent="."]
+position = Vector2( 0, 3 )
+texture = ExtResource( 6 )
+region_enabled = true
+region_rect = Rect2( 78, 46, 18, 10 )
+script = ExtResource( 14 )
+
+[node name="Cloth" type="Sprite" parent="."]
+position = Vector2( 0, -6 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 3, 3, 28, 14 )
+script = ExtResource( 12 )
+
+[node name="Leg" type="Sprite" parent="."]
+position = Vector2( 0, 3 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 118, 59, 18, 9 )
+script = ExtResource( 13 )
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2( 0, -8 )
 shape = SubResource( 5 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 0, -10 )
-frames = SubResource( 2 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
-position = Vector2( -1, -32 )
-frames = SubResource( 3 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="AnimatedSprite3" type="AnimatedSprite" parent="."]
-position = Vector2( 0, -1 )
-frames = SubResource( 4 )
-__meta__ = {
-"_edit_lock_": true
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/idle_down = SubResource( 21 )
+anims/idle_left = SubResource( 18 )
+anims/idle_right = SubResource( 19 )
+anims/idle_up = SubResource( 20 )
+anims/walk_down = SubResource( 16 )
+anims/walk_left = SubResource( 13 )
+anims/walk_right = SubResource( 14 )
+anims/walk_up = SubResource( 15 )
 
 [connection signal="input_event" from="." to="." method="_on_Player_input_event"]
